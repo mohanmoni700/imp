@@ -1,15 +1,12 @@
 pipeline {
 
     agent any
-    parameters {
-     choice(name:'stage_name' , choices:['stage1' , 'stage2' , 'stage3'] , description: 'enter the stage name which wants to exec')
-    }
 
 
     stages {
             stage('stage1') {
             when {
-                expression{ params.stage_name == "stage1" }
+                
                 branch 'main'
                 
                 }
@@ -25,9 +22,7 @@ pipeline {
             }    
             
             stage('stage2') {
-             when {
-             expression{ params.stage_name == "stage2" }
-              }
+            
                 steps {
                     
                     catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE') {
@@ -42,9 +37,7 @@ pipeline {
             }
 
             stage('stage3') {
-            when {
-            expression{ params.stage_name == "stage3" }
-             }
+            
                   steps {
                     sh '''
                      echo deploy
