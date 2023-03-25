@@ -2,12 +2,12 @@ pipeline {
 
     agent any
     parameters {
-     string defaultValue: 'main', name: 'branch', trim: true
+     choice(name:stage_name, choices:['stage1, stage2, stage3'], description: 'enter the stage name which wants to exec')
     }
 
 
     stages {
-            stage('stage1-download') {
+            stage('stage1') {
                 
                 steps {
                     sh '''
@@ -18,7 +18,7 @@ pipeline {
                 }
             }    
             
-            stage('stage2-testing') {
+            stage('stage2') {
                  
                 steps {
                     
