@@ -3,7 +3,7 @@ pipeline {
     agent any
 
     stages {
-            stage('stage1-test') {
+            stage('stage1-download') {
                 
                 steps {
                     sh '''
@@ -16,9 +16,14 @@ pipeline {
             stage('stage2-testing') {
                  
                 steps {
-                    sh '''
-                    echo testing
-                    '''
+                    
+                    catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE') {
+                            sh '''
+                            echo testing
+                            exit 1
+                            '''
+                            
+                     }
                 }
             }
 
