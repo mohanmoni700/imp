@@ -10,6 +10,7 @@ pipeline {
             stage('stage1') {
             when {
                 expression{ params.stage_name == "stage1" }
+                branch 'main'
                 
                 }
             
