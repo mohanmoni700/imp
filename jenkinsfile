@@ -10,6 +10,8 @@ pipeline {
             stage('stage1') {
             when {
                 expression{ params.stage_name == "stage1" }
+                
+                }
             
                 
                 steps {
@@ -22,8 +24,9 @@ pipeline {
             }    
             
             stage('stage2') {
+             when {
              expression{ params.stage_name == "stage2" }
-                 
+              }
                 steps {
                     
                     catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE') {
@@ -38,8 +41,10 @@ pipeline {
             }
 
             stage('stage3') {
+            when {
             expression{ params.stage_name == "stage3" }
-                    steps {
+             }
+                  steps {
                     sh '''
                      echo deploy
 
