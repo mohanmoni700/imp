@@ -6,7 +6,7 @@ pipeline {
             stage('stage1-test') {
                 
                 steps {
-                    '''
+                    sh '''
                     echo mohan
                     '''
                     
@@ -16,7 +16,7 @@ pipeline {
             stage('stage2-testing') {
                  
                 steps {
-                    '''
+                    sh '''
                     echo testing
                     '''
                 }
@@ -24,7 +24,7 @@ pipeline {
 
             stage('stage3-deploy') {
                 steps {
-                 '''
+                 sh '''
                  echo deploy
 
                  '''
