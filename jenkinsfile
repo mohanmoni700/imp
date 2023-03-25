@@ -12,6 +12,7 @@ pipeline {
                 steps {
                     sh '''
                     echo mohan
+                    sleep 5
                     '''
                     
                 }
@@ -24,6 +25,7 @@ pipeline {
                     catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE') {
                             sh '''
                             echo testing
+                            sleep 5
                             
                             '''
                        }     
@@ -37,6 +39,7 @@ pipeline {
                  echo deploy
 
                  '''
+                 sh 'sleep 5'
                 }
             }
 
