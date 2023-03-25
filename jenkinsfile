@@ -1,6 +1,10 @@
 pipeline {
 
     agent any
+    parameters {
+     string defaultValue: 'main', name: 'branch', trim: true
+    }
+
 
     stages {
             stage('stage1-download') {
