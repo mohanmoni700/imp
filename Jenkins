@@ -1,0 +1,33 @@
+pipeline {
+
+    agent any
+
+    stages {
+
+        stage('FIRST-BUILD') {
+
+            step {
+
+                sh '''
+                    echo "my-first build"
+                '''
+
+            }
+
+
+
+        }
+
+
+
+
+
+    }
+
+
+
+
+
+
+
+}
