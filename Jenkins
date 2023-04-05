@@ -14,20 +14,23 @@ pipeline {
 
             }
 
+        }
+
+        stage('second-stage') {
+
+            steps {
+
+                    sh echo "mohan"
+
+
+
+            }
+
 
 
         }
 
 
-
-
-
     }
-
-
-
-
-
-
 
 }
