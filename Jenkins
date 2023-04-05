@@ -6,7 +6,7 @@ pipeline {
 
         stage('FIRST-BUILD') {
 
-            step {
+            steps {
 
                 sh '''
                     echo "my-first build"
